@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <!-- Header-->
+        <header >
+            <img src="static/ecom.webp" alt="logo" style= "width:2100px; height: 400px">
+            
+        </header>
+        <!-- Section-->
+        <section class="py-5" style="background-color:rgb(208, 213, 213)" > 
+            
+            <div class="container px-4 px-lg-2 mt-0">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+
+                    {% for product in products %}
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{{product.product_image.url}}" alt="..." height="200px" width="150px" />
+                            <!-- Product details-->
+                            <div class="card-body p-3">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{product.product_name}}</h5>
+                                    <!-- Product price-->
+                                   Rs.{{product.product_price}}/-
+                                  <br/>
+                                  {{product.product_description}}
+                                
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                           
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <center>
+                                <a href="{% url 'product' product.id %}"class="btn btn-secondary" >View product</a>
+                              <br/><br/>
+                               </center>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+            
+                    
+                            
+                    
+                </div>
+            </div>
+
+           
+        </section>
+       
+    {% endblock %}

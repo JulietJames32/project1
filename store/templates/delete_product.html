@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">products registration.</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Delete products here!!!!</p>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        
+            <div class="col-8">
+                <br/><br/>
+                <p>Are you sure you want to delete the product ?</p>
+                <form method ="POST" >
+                    {% csrf_token %}
+                   
+                  
+                    <br/><br/>
+                    <button type="submit" class="btn btn-primary">confirm</button>
+                    <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
+
+                  </form>
+            <br/><br/>
+            
+        </div>
+        
+        <br/><br/>  <br/><br/>
+    </div>
+    <br/><br/>  <br/><br/><br/><br/>  <br/><br/>
+    <br/><br/>  <br/><br/><br/><br/>  <br/><br/>  
+    <br/><br/>  <br/><br/><br/><br/>  <br/><br/>
+</div>
+
+{% endblock %}

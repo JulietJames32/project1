@@ -1,0 +1,3 @@
+Hai, {{name|safe}},Thank you for visiting! the page
+Here is a copy of your review:
+{{review|safe}}
